@@ -2,7 +2,7 @@ import React, {useRef, useState } from 'react';
 import Timer from './components/Timer';
 import Word from './components/Word';
 
-const paragraph = "Lorem".split("")
+const paragraph = "The result formed due to the combination of substances does not lose its individuality nor are they combined chemically. Mixtures are the one product of a mechanical blending or mixing of chemical substances such as elements and compounds.".split("")
 
 export default function App (){
   const [input,setInput] = useState('')
@@ -51,7 +51,7 @@ export default function App (){
             correctWords = {correct.filter(e => e).length} // ad combo
           />
 
-        <div className="container border border-black w-[500px] mb-5">
+        <div className="container border border-black w-[500px] mb-5 p-4 text-center">
                 {setText.current.map((words,index) =>{
                       return(
                         <Word
