@@ -29,7 +29,6 @@ export default function App (){
           setstartCounting(!startCounting)
         }
         // Validation
-        // Timer
         // disable click
 
         //seasion
@@ -44,33 +43,33 @@ export default function App (){
     }
 
   return (
-    <>
-      <main className='min-h-[100vh] flex justify-center items-center flex-col'>
-
+    <main>
+      <label htmlFor='inputs' className='min-h-[100vh] flex justify-center items-center flex-col border border-black'>
+            
           <Timer
             count = {startCounting}
             correctWords = {correct.filter(e => e).length} // ad combo
           />
 
         <div className="container border border-black w-[500px] mb-5">
-            {setText.current.map((words,index) =>{
-               return(
-                <Word
-                   key = {index}
-                   text = {words}
-                   active = {index === active}   
-                   correct = {correct[index]}  
-              />
-               )
-            })}
+                {setText.current.map((words,index) =>{
+                      return(
+                        <Word
+                          key = {index}
+                          text = {words}
+                          active = {index === active}   
+                          correct = {correct[index]}  
+                      />
+                      )
+                    })}
           </div>
-            <input onChange={(e) => processInput(e.target.value)} value={input} type="text" className='outline-none opacity-0 cursor-default' autoFocus/>
+            <input onChange={(e) => processInput(e.target.value)} value={input} type="text" className='border border-black' autoFocus id='inputs'/>
           <div className="btns">
               <button>Reset</button>
             </div>
 
        
-      </main>
-    </>
+            </label>
+    </main>
   );
 }
